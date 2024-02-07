@@ -1,25 +1,29 @@
+// ignore: file_names
 import 'package:ecommerce/consts/consts.dart';
 
-Widget customTextField() {
+Widget customTextField({String? title, String? hint, controller}) {
   return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      email.text.size(16).fontFamily(semibold).color(redColor).make(),
+      title!.text.size(16).fontFamily(semibold).color(redColor).make(),
       5.heightBox,
-      const TextField(
+      TextField(
+        //controller: controller,
         decoration: InputDecoration(
-          hintStyle: TextStyle(
+          hintStyle: const TextStyle(
             fontFamily: semibold,
             color: fontGrey,
           ),
-          hintText: emailhint,
+          hintText: hint,
           isDense: true,
           fillColor: lightGrey,
           filled: true,
           border: InputBorder.none,
           focusedBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: redColor)),
+              const OutlineInputBorder(borderSide: BorderSide(color: redColor)),
         ),
-      )
+      ),
+      5.heightBox,
     ],
   );
 }
